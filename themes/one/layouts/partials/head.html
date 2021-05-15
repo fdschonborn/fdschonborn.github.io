@@ -4,4 +4,17 @@
     <meta name="theme-color" content="#FFFFFF">
 
     {{- hugo.Generator -}}
+
+    <title>
+        {{- if .Page.IsHome }}
+            {{ site.Title }}
+        {{- else -}}
+            {{- if eq .Page.Kind "404" }}
+                Page Not Found
+            {{- else -}}
+                {{ .Page.Title }}
+            {{- end }}
+            &middot; {{ site.Title }}
+        {{- end }}
+    </title>
 </head>
