@@ -1,6 +1,4 @@
 {{ define "main" }}
-    {{ .Content }}
-
     {{- range $page := .Pages }}
         <h1><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></h1>
         <p>{{ $page.Description }}</p>
