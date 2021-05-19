@@ -1,0 +1,15 @@
+{{ define "main" }}
+    {{ .Content }}
+
+    {{- range $page := .Pages }}
+        <h1><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></h1>
+        <p>{{ $page.Description }}</p>
+        {{- if $page.Draft }}
+            <p><b>DRAFT</b></p>
+        {{- end }}
+        <p>{{ $page.PublishDate.UTC.Format "02/01/06" }}</p>
+        <p>{{ $page.WordCount }} word(s) &ndash; ~{{ .ReadingTime }} minute(s)</p>
+    {{- else }}
+        <p>Nothing to see here...</p>
+    {{- end }}
+{{ end }}

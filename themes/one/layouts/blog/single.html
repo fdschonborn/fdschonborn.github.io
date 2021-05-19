@@ -1,0 +1,13 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+    {{- if .Draft }}
+        <p><b>DRAFT</b></p>
+    {{- end }}
+    <p>{{ .PublishDate.UTC.Format "02/01/06" }}</p>
+    <p>{{ .WordCount }} word(s) &ndash; ~{{ .ReadingTime }} minute(s)</p>
+
+    {{ .TableOfContents }}
+
+    {{ .Content }}
+{{ end }}
