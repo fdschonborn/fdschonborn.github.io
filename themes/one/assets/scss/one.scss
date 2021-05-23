@@ -38,10 +38,16 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "Noto Color Emoji";
+  src: local("Noto Color Emoji"),
+    url("/fonts/Noto Color Emoji/NotoColorEmoji.ttf") format("truetype");
+}
+
 body {
   background-color: rgb(250, 250, 250);
   color: rgb(35, 35, 35);
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif, "Noto Color Emoji";
   margin: 1em;
 }
 
@@ -55,6 +61,7 @@ a:hover {
   color: rgb(140, 140, 140);
 }
 
+pre,
 code {
   font-family: "JetBrains Mono", monospace;
 }
