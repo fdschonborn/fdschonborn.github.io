@@ -1,7 +1,19 @@
 <header>
     <h1>{{ site.Title }}</h1>
+
+    {{ if site.Params.description }}
+        <h2>{{ site.Params.description }}</h2>
+    {{ end }}
+
     <nav>
         <a href="{{ site.Home.Permalink }}">Home</a>
-        <a href="{{ with .GetPage "blog" }}{{ .Permalink }}{{ end }}">Blog</a>
+
+        {{ range $page := site.Sections }}
+            <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+        {{ end }}
+
+        {{ if site.IsServer }}
+            <a href="{{ site.BaseURL }}/404.html">404</a>
+        {{ end }}
     </nav>
 </header>
