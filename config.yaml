@@ -4,3 +4,11 @@ languageCode: en-us
 theme: one
 enableGitInfo: true
 enableEmoji: true
+
+params:
+  title: "Federico's Hideout :crab:"
+
+markup:
+  highlight:
+    lineNos: true
+    style: solarized-dark

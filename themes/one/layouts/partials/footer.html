@@ -1,11 +1,15 @@
 <footer>
-    <a href="https://github.com/fdschonborn/fdschonborn.github.io/blob/main/LICENSE" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" alt="Creative Commons License"/></a>
-    <p>
-        {{ if site.IsServer }}
-            Served by
-        {{ else }}
-            Built with
-        {{ end }}
-        <a href="https://gohugo.io/" target="_blank">Hugo</a> {{ hugo.Version }}.
-    </p>
+    <div>
+        <a href="https://github.com/fdschonborn/fdschonborn.github.io/blob/main/LICENSE" target="_blank"><img src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" alt="Creative Commons License"/></a>
+    </div>
+    <div>
+        <p>
+            {{ if site.IsServer }}
+                Served by
+            {{ else }}
+                Built with
+            {{ end }}
+            <a href="https://gohugo.io/" target="_blank">Hugo</a> {{ hugo.Version }}.
+        </p>
+    </div>
 </footer>

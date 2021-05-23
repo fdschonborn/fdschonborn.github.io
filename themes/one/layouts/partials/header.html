@@ -1,11 +1,17 @@
 <header>
-    <h1>{{ site.Title }}</h1>
+    <h1 class="header-title">
+        {{ if site.Params.title }}
+            {{ site.Params.title | emojify }}
+        {{ else }}
+            {{ site.Title }}
+        {{ end }}
+    </h1>
 
-    {{ if site.Params.description }}
-        <h2>{{ site.Params.description }}</h2>
+    {{ if site.Params.subtitle }}
+        <h2 class="header-subtitle"><em>{{ site.Params.subtitle | emojify }}</em></h2>
     {{ end }}
 
-    <nav>
+    <nav class="header-nav">
         <a href="{{ site.Home.Permalink }}">Home</a>
 
         {{ range $page := site.Sections }}

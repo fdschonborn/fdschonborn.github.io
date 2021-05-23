@@ -1,13 +1,16 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
-    <p>{{ .Description }}</p>
-    {{- if .Draft }}
-        <p><b>DRAFT</b></p>
-    {{- end }}
-    <p>{{ .PublishDate.UTC.Format "02/01/06" }}</p>
-    <p>{{ .WordCount }} word(s) &ndash; ~{{ .ReadingTime }} minute(s)</p>
+    <section>
+        <h1 class="post-title">{{ .Title }}</h1>
+        <h2 class="post-description">{{ .Description }}</h2>
+        {{- if .Draft }}
+            <p class="draft-label">DRAFT</p>
+        {{- end }}
+        <p>{{ .PublishDate.UTC.Format "January 02, 2006" }}</p>
+        <p>{{ .WordCount }} word(s) &ndash; ~{{ .ReadingTime }} minute(s)</p>
+    </section>
 
-    {{ .TableOfContents }}
-
-    {{ .Content }}
+    <article>
+        {{ .TableOfContents }}
+        {{ .Content }}
+    </article>
 {{ end }}
