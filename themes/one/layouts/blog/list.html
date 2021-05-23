@@ -1,19 +1,19 @@
-{{ define "main" }}
+{{- define "main" -}}
 <main>
     <div>
-        {{- range $page := .Pages }}
+        {{- range $page := .Pages -}}
             <div>
                 <h1><a href="{{ $page.Permalink }}">{{ $page.Title }}</a></h1>
                 <h2>{{ $page.Description }}</h2>
-                {{- if $page.Draft }}
+                {{- if $page.Draft -}}
                     <p class="draft-label">DRAFT</p>
-                {{- end }}
+                {{- end -}}
                 <p>{{ $page.PublishDate.UTC.Format "January 02, 2006" }}</p>
                 <p>{{ $page.WordCount }} word(s) &ndash; ~{{ .ReadingTime }} minute(s)</p>
             </div>
-        {{- else }}
+        {{- else -}}
             <p>Nothing to see here...</p>
-        {{- end }}
+        {{- end -}}
     </div>
 </main>
-{{ end }}
+{{- end -}}

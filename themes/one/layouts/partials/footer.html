@@ -4,11 +4,11 @@
     </div>
     <div>
         <p>
-            {{ if site.IsServer }}
+            {{- if site.IsServer -}}
                 Served by
-            {{ else }}
+            {{- else -}}
                 Built with
-            {{ end }}
+            {{- end -}}
             <a href="https://gohugo.io/" target="_blank">Hugo</a> {{ hugo.Version }}.
         </p>
     </div>

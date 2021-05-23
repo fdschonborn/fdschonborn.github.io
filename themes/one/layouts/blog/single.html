@@ -1,16 +1,16 @@
-{{ define "main" }}
+{{- define "main" -}}
     <section>
         <h1 class="post-title">{{ .Title }}</h1>
         <h2 class="post-description">{{ .Description }}</h2>
-        {{- if .Draft }}
+        {{- if .Draft -}}
             <p class="draft-label">DRAFT</p>
-        {{- end }}
+        {{- end -}}
         <p>{{ .PublishDate.UTC.Format "January 02, 2006" }}</p>
         <p>{{ .WordCount }} word(s) &ndash; ~{{ .ReadingTime }} minute(s)</p>
     </section>
 
     <article>
-        {{ .TableOfContents }}
-        {{ .Content }}
+        {{- .TableOfContents -}}
+        {{- .Content -}}
     </article>
-{{ end }}
+{{- end -}}

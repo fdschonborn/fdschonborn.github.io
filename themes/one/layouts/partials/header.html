@@ -1,25 +1,21 @@
 <header>
     <h1 class="header-title">
-        {{ if site.Params.title }}
-            {{ site.Params.title | emojify }}
-        {{ else }}
-            {{ site.Title }}
-        {{ end }}
+        {{ site.Params.title | default site.Title | emojify }}
     </h1>
 
-    {{ if site.Params.subtitle }}
+    {{- if site.Params.subtitle -}}
         <h2 class="header-subtitle"><em>{{ site.Params.subtitle | emojify }}</em></h2>
-    {{ end }}
+    {{- end -}}
 
     <nav class="header-nav">
         <a href="{{ site.Home.Permalink }}">Home</a>
 
-        {{ range $page := site.Sections }}
+        {{- range $page := site.Sections -}}
             <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
-        {{ end }}
+        {{- end -}}
 
-        {{ if site.IsServer }}
+        {{- if site.IsServer -}}
             <a href="{{ site.BaseURL }}/404.html">404</a>
-        {{ end }}
+        {{- end -}}
     </nav>
 </header>
