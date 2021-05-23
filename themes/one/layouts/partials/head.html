@@ -6,8 +6,8 @@
     {{- hugo.Generator -}}
 
     {{ $scssOptions := (dict "targetPath" "css/one.css" "outputStyle" "compressed" "enableSourceMap" true) }}
-    {{ $scss := resources.Get "scss/one.scss" | toCSS $scssOptions | fingerprint }}
-    <link rel="stylesheet" href="{{ $scss.Permalink }}">
+    {{ $scss := resources.Get "scss/one.scss" | toCSS $scssOptions | fingerprint "sha512" }}
+    <link type="text/css" rel="stylesheet" href="{{ $scss.Permalink }}" integrity="{{ $scss.Data.Integrity }}">
 
     <title>
         {{- if .Page.IsHome }}
