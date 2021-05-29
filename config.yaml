@@ -1,12 +1,9 @@
-title: Federico Damián Schonborn
+title: Federico's Hideout
 baseURL: https://fdschonborn.github.io/
 languageCode: en-us
 theme: one
 enableGitInfo: true
 enableEmoji: true
-
-params:
-  title: "Federico's Hideout :turtle:"
 
 markup:
   highlight:

@@ -1,6 +1,6 @@
 <header>
     <h1 class="header-title">
-        {{ site.Params.title | default site.Title | emojify }}
+        {{ site.Title }}
     </h1>
 
     {{- if site.Params.subtitle -}}
@@ -8,14 +8,14 @@
     {{- end -}}
 
     <nav class="header-nav">
-        <a href="{{ site.Home.Permalink }}">Home</a>
+        <a href="{{ site.Home.Permalink }}"><span class="header-nav-emoji">{{ ":house:" | emojify }}</span>Home</a>
 
         {{- range $page := site.Sections -}}
-            <a href="{{ $page.Permalink }}">{{ $page.Title }}</a>
+            <a href="{{ $page.Permalink }}"><span class="header-nav-emoji">{{ printf ":%s:" $page.Params.emoji | emojify }}</span>{{ $page.Title }}</a>
         {{- end -}}
 
         {{- if site.IsServer -}}
-            <a href="{{ site.BaseURL }}/404.html">404</a>
+            <a href="{{ site.BaseURL }}/404.html" style="color: crimson;">404</a>
         {{- end -}}
     </nav>
 </header>
